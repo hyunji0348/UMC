@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달 만들기</title>
+    <link type="text/css" href="modal.css" rel="stylesheet"></link>
+</head>
+<body>
+    <h1>안녕하세요!</h1>
+    <p>내용내용내용</p>
+    <button id="open">버튼 열기</button>
+
+    <div class="modal-wrapper">
+        <div class="modal">
+            <h2 class="modal-title">안녕하세요</h2>
+            <p>모달 내용은 어쩌고 저쩌고..</p>
+
+            <div class="close-wrapper">
+            <button id="close">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openModal = document.getElementById('open');
+        const closeModal = document.getElementById('close');
+        const modal = document.querySelector('.modal-wrapper');
+
+        openModal.addEventListener('click', function(){
+            modal.style.display = "block";
+        })
+        closeModal.addEventListener('click', function(){
+            modal.style.display = 'none';
+        })
+
+        openModal.addEventListener('mousedown', function(){
+            openModal.style.background = 'skyblue';
+        })
+        closeModal.addEventListener('mousedown', function(){
+            closeModal.style.background = 'skyblue';
+        })
+        openModal.addEventListener('mouseup', function(){
+            openModal.style.background = 'none';
+        })
+        closeModal.addEventListener('mouseup', function(){
+            closeModal.style.background = 'none';
+        })
+
+    </script>
+  </body>
+</html>
