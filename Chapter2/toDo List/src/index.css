@@ -1,0 +1,142 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+body {
+  background-color: #b8ccee;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-container {
+  max-width: 1000px; /* 최대 너비 조정 */
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex; /* Flexbox 적용 */
+  justify-content: space-between; /* 양쪽 정렬 */
+  align-items: flex-start; /* 위로 정렬 */
+  flex-wrap: wrap; /* 필요 시 줄 바꿈 */
+}
+
+h1, h2 {
+  text-align: center;
+  width: 100%; /* 가로 폭 100%로 설정 */
+}
+
+.input-container {
+  margin: 20px auto; /* 수직 가운데 정렬 */
+  text-align: center; /* 입력창 내부 요소 가운데 정렬 */
+  width: 100%; /* 최대 너비 100% 설정 */
+}
+
+.input-container input {
+  padding: 10px;
+  width: 70%; /* 입력창 너비 조정 */
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.todo-list, .done-list {
+  width: 45%; /* 리스트 너비 조정 */
+  margin: 0 auto; /* 수평 가운데 정렬 */
+}
+
+.todo-list {
+  order: 1; /* 해야 할 일을 왼쪽으로 배치 */
+}
+
+.done-list {
+  order: 2; /* 해낸 일을 오른쪽으로 배치 */
+}
+
+.todo-list ul, .done-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li, .done-list li {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  font-weight: 1000;
+}
+
+.todo-list li button, .done-list li button {
+  border: none;
+  background-color: #adb5e8;
+  padding: 5px 10px;
+  cursor: pointer;
+}
