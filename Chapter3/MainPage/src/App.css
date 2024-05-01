@@ -1,0 +1,58 @@
+body{
+  background-color: #22254B;
+}
+.app-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.movie-container{
+  width: 250px;
+  margin: 15px;
+  background-color: #373B69;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+  color: white;
+}
+.movie-container img{
+  width: 100%;
+}
+.movie-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.movie-info h4{
+  margin: 0;
+}
+.movie-info span{
+  margin-left: 3px;
+}
+
+
+
+
+
+
+
+
+
+  .navbar {
+    overflow: hidden;
+    background-color: #121054; /* 배경색 */
+    position: fixed; /* 화면 상단에 고정 */
+    top: 0;
+    width: 100%; /* 전체 너비로 설정 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    color: white;
+  }
+
+  .navbar span {
+    float: right;
+    display: block;
+    color: #ffffff; /* 글자색 */
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration-color: #ffffff;
+  }
