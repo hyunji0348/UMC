@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Movie from "./components/movie";
-import { movies } from './components/moviedummy';
+import Description from "./components/description";
+import {movies} from './api.jsx';
 import './App.css';
 
 function App() {
@@ -8,13 +9,14 @@ function App() {
     <div className="App">
       <div className="app-container">
         {
-          movies.results.map((item) => {//data갯수 만큼 돈다.
+          movies.results.map((element) => {//api의 result멤버의 data갯수 만큼 돈다.
             return (
               <Movie 
-                title = {item.title}
-                poster_path= {item.poster_path}
-                vote_average= {item.vote_average}
+                title = {element.title}
+                poster_path= {element.poster_path}
+                vote_average= {element.vote_average}
               />
+              <Description/>
             )
           })
         }

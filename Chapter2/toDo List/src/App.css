@@ -3,8 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  position: center;
 }
-
+/* 
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -16,9 +17,9 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
+} */
 
-@keyframes logo-spin {
+/* @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -31,8 +32,8 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
+} */
+/* 
 .card {
   padding: 2em;
 }
@@ -40,10 +41,10 @@
 .read-the-docs {
   color: #888;
 }
-
+ */
 
 body {
-  background-color: #b8ccee;
+  background-color: #eef4ff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -53,7 +54,7 @@ body {
   max-width: 1000px; /* 최대 너비 조정 */
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
   display: flex; /* Flexbox 적용 */
   justify-content: space-between; /* 양쪽 정렬 */
@@ -67,6 +68,7 @@ h1, h2 {
 }
 
 .input-container {
+  border: none;
   margin: 20px auto; /* 수직 가운데 정렬 */
   text-align: center; /* 입력창 내부 요소 가운데 정렬 */
   width: 100%; /* 최대 너비 100% 설정 */
@@ -99,20 +101,22 @@ h1, h2 {
 
 .todo-list li, .done-list li {
   padding: 10px;
-  margin-bottom: 5px;
   background-color: none;
-  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   font-size: large;
-  font-weight: 1000;
+  font-weight: 600;
+  border-bottom: 1px solid grey;
+  
+  max-width: 400px;
 }
 
 .todo-list li button, .done-list li button {
   border: none;
-  background-color: #adb5e8;
+  background-color: #d0d5f9;
   color: black;
   padding: 5px 10px;
   border-radius: 3px;
+  font-weight: 600;
   cursor: pointer;
 }
