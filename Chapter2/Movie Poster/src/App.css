@@ -6,6 +6,9 @@ body{
   flex-wrap: wrap;
   justify-content: center;
 }
+.element-container{
+  position: relative;
+}
 .movie-container{
   width: 250px;
   margin: 15px;
@@ -20,12 +23,31 @@ body{
 .movie-info{
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 20px;
+  height: 70px;
 }
 .movie-info h4{
   margin: 0;
 }
 .movie-info span{
   margin-left: 3px;
+}
+
+.description-container{
+  position: absolute;
+  background-color: rgb(33, 33, 33);
+  color: white;
+  opacity: 90%;
+  top: 15px;
+  left: 15px;
+  width: 250px;
+  height: 489px;
+}
+
+.description-title{
+  margin: 20px;
+}
+
+.description-info{
+  margin: 20px;
 }
