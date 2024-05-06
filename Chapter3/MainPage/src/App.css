@@ -5,6 +5,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 70px 0;
 }
 .movie-container{
   width: 250px;
@@ -29,30 +30,3 @@ body{
 .movie-info span{
   margin-left: 3px;
 }
-
-
-
-
-
-
-
-
-
-  .navbar {
-    overflow: hidden;
-    background-color: #121054; /* 배경색 */
-    position: fixed; /* 화면 상단에 고정 */
-    top: 0;
-    width: 100%; /* 전체 너비로 설정 */
-    z-index: 1000; /* 다른 요소 위에 표시 */
-    color: white;
-  }
-
-  .navbar span {
-    float: right;
-    display: block;
-    color: #ffffff; /* 글자색 */
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration-color: #ffffff;
-  }
