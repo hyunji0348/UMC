@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function ErrorPage(){
     let navigate = useNavigate()
-    
+
     const Body = styled.div`
     color: white;
     `
@@ -43,8 +43,8 @@ function ErrorPage(){
     <Body>
         <Title><h4>Oops!</h4> 
         <h4>예상치 못한 에러가 발생했습니다; Ĭ ^ Ĭ </h4>
-        <h4>Not found </h4>
-        <ReturnBtn onClick={ ()=>{navigate('/mainpage') }}>메인으로 이동하기</ReturnBtn>
+        <h4 className="not-found">Not found </h4>
+        <ReturnBtn onClick={ ()=>{navigate('/') }}>메인으로 이동하기</ReturnBtn>
         </Title> 
     </Body>
   )
