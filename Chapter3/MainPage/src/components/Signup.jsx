@@ -231,11 +231,14 @@ function Signup() {
             };
 
         await axios.post("http://localhost:8080/auth/signup", body);
+<<<<<<< HEAD
 
         // // 회원가입 성공 후 토큰 저장
         // const { token } = response.data;
         // localStorage.setItem('token', token);
 
+=======
+>>>>>>> ee738d094bdfc9ad9390809af6e1ca12610219a7
           alert("회원가입 성공");   
           navigate("/login");
         } catch (error) {
