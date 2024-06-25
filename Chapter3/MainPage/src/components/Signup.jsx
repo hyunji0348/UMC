@@ -232,10 +232,6 @@ function Signup() {
 
         await axios.post("http://localhost:8080/auth/signup", body);
 
-        // 회원가입 성공 후 토큰 저장
-        const { token } = response.data;
-        localStorage.setItem('token', token);
-
           alert("회원가입 성공");   
           navigate("/login");
         } catch (error) {
