@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Form = styled.form`
 color:white;
@@ -114,18 +115,52 @@ function Login() {
     }, // 각 항목의 Valid값들이 변경될 때마다 useEffect실행됨
     [idValid, passwordValid]);
     
-    // 폼 제출 핸들러
-    const handleSubmit = (e) => {
-        e.preventDefault(); // 필수!! 폼 요소의 기본 동작인 페이지 전환/새로고침 방지 
-        // 폼 데이터 콘솔 출력
-        console.log({
-            id,
-            password
-        });
-        alert("로그인 완료");
-        // MainPage로 이동
-        navigate('/');
-    }
+    // // 폼 제출 핸들러
+    // const handleSubmit = (e) => {
+    //     e.preventDefault(); // 필수!! 폼 요소의 기본 동작인 페이지 전환/새로고침 방지 
+    //     // 폼 데이터 콘솔 출력
+    //     console.log({
+    //         id,
+    //         password
+    //     });
+    //     alert("로그인 완료");
+    //     // MainPage로 이동
+    //     navigate('/');
+    // }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+            const body = {
+                username: id,
+                password: password
+            };
+    
+            // 서버로 POST 요청 보내기
+            const response = await axios.post("http://localhost:8080/auth/login", body);
+    
+            if (response.status === 200) {
+                alert("로그인 성공!");
+                navigate('/'); // 로그인 성공 후 메인 페이지로 이동
+            } else {
+                alert("로그인 실패");
+            }
+        } catch (error) {
+            if (error.response) {
+                if (error.response.status === 401) {
+                    alert('아이디나 비밀번호가 올바르지 않습니다.');
+                } else {
+                    alert('로그인 중 오류가 발생했습니다.');
+                }
+            } else {
+                console.error(error.message);
+                alert('로그인 중 오류가 발생했습니다.');
+            }
+        }
+    };
+    
+      
     return (
         <Form method="post" onSubmit={handleSubmit}>
             <InputContainer>

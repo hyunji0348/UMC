@@ -107,7 +107,7 @@ function DetailPage() {
     // const pathname = location.pathname; // 현재 url경로를 pathname변수에 저장 ex) /movie/240
     // const parts = pathname.split('/');  // '/'을 기준으로 분할한 배열 parts 생성
     // const id = parts[parts.length - 1]; // 배열의 마지막 요소 가져오기 --> 해당 영화의 id번호
-    let {id} = useParams;
+    let {id} = useParams();
 
     const tmdbCast = axios.create({ // axios객체 생성
       baseURL: 'https://api.themoviedb.org/3', 

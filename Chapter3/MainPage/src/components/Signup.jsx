@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Form = styled.form`
 color:white;
@@ -72,6 +73,7 @@ function Signup() {
     const [passwordCheckValid, setPasswordCheckValid] = useState(false);
 
     const [notAllow, setnotAllow] = useState(true); // 제출버튼 상태
+    // const [serverError, setServerError] = useState(''); // 서버 오류 메시지 state 추가
 
     // 이름 유효성 검사
     const handleName = (e) => {
@@ -96,10 +98,10 @@ function Signup() {
 
         if (e.target.value == '') { // 입력값이 없을 때
             setIdError('아이디를 입력해주세요!');
-            setIDValid(false);
+            setIdValid(false);
         }else { // 입력값이 들어올 경우
             setIdError('');
-            setIDValid(true);
+            setIdValid(true);
         }
     }
     
@@ -213,22 +215,44 @@ function Signup() {
     }, // 각 항목의 Valid값들이 변경될 때마다 useEffect실행됨
     [nameValid, idValid, emailValid, ageValid, passwordValid, passwordCheckValid]);
     
+
     // 폼 제출 핸들러
-    const handleSubmit = (e) => {
-        e.preventDefault(); // 필수!! 폼 요소의 기본 동작인 페이지 전환/새로고침 방지 
-        // 폼 데이터 콘솔 출력
-        console.log({
-            name,
-            id,
-            email,
-            age,
-            password,
-            passwordCheck
-        });
-        alert("회원가입 완료");
-        // MainPage로 이동
-        navigate('/');
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const body = {
+              username: id,
+              password: password,
+              passwordCheck: passwordCheck,
+              name: name,
+              email: email,
+              age: age
+            };
+
+        await axios.post("http://localhost:8080/auth/signup", body);
+
+        // 회원가입 성공 후 토큰 저장
+        const { token } = response.data;
+        localStorage.setItem('token', token);
+
+          alert("회원가입 성공");   
+          navigate("/login");
+        } catch (error) {
+          if (error.response) {
+            if (error.response.status === 409) {
+                alert('이미 존재하는 아이디입니다.')
+            } else if (error.response.status === 400) {
+                alert('비밀번호가 일치하지 않습니다.')
+            } else {
+                alert('회원가입에 실패했습니다.')
+            }
+          } else {
+            console.error(error.message);
+          }
+        }
+      };
+
     return (
         <Form method="post" onSubmit={handleSubmit}>
             <InputContainer>
