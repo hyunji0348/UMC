@@ -231,7 +231,6 @@ function Signup() {
             };
 
         await axios.post("http://localhost:8080/auth/signup", body);
-
           alert("회원가입 성공");   
           navigate("/login");
         } catch (error) {
